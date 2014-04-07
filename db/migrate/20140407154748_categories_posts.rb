@@ -7,6 +7,6 @@ class CategoriesPosts < ActiveRecord::Migration
 
   	add_index :categories_posts, :category_id
   	add_index :categories_posts, :post_id
-  	remove_column :blog_posts, :category
+  	#remove_column :blog_posts, :category
   end
 end

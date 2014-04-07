@@ -15,5 +15,5 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :username, :first_name, :last_name, :email, :display_name, 
+  attr_accessible :username, :first_name, :last_name, :email, :display_name, :hashed_password, :user_level 
 end
