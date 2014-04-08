@@ -16,4 +16,5 @@
 
 class User < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :email, :display_name, :hashed_password, :user_level 
+  has_many :posts, :foreign_key => 'author_id'
 end
