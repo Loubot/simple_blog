@@ -21,4 +21,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
 
   has_many :comments, :order => 'created_at ASC', :dependent => :destroy
+
+  has_many :categorisations
+
+  has_many :categories :through => :categorisations
 end
