@@ -1,6 +1,6 @@
 SimpleBlog::Application.routes.draw do
   
-  resources :blog_posts
+  resources :posts
 
 
   get "staff/index"
