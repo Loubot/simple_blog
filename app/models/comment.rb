@@ -13,6 +13,20 @@
 #
 
 class Comment < ActiveRecord::Base
-  attr_accessible :title, :body, :author, :content, :status
-  belongs_to :post
+  attr_accessible :title, :body, :author, :content, :status, :post_id
+  belongs_to :post, counter_cache: true
+
+  #before_save :check_count
+
+  after_save :update_count
+
+  def check_count
+  	p = Post.find(self.post_id)
+  	puts "old size #{p.comments.size}"
+  end
+
+  def update_count
+  	p = Post.find(self.post_id)  	
+  	p.update_attribute(:comments_count, p.comments.size)  	
+  end
 end

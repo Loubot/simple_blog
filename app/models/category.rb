@@ -13,5 +13,5 @@
 class Category < ActiveRecord::Base
 
 	has_many :categorisations
-  has_many :posts :through => :categorisations
+  has_many :posts, :through => :categorisations
 end
