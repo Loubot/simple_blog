@@ -2,9 +2,14 @@ html,body{
 	height: 100%;
 }
 
-.indexHeader{
+.indexHeader.main{
 	height: 15%;
-	background-color:blue;
+	background-color: #80CCE6;
+}
+
+.indexHeader.staff{
+	height: 15%;
+	background-color: #ABAB9B;
 }
 
 .mainIndexHTitle{
@@ -15,3 +20,11 @@ html,body{
 .container-fluid{
 	text-align: center;
 }
+
+.staffLeft.menu{
+	border: solid;
+	margin: 0 0 1% 1%;
+	background-color: #eeeeee;
+	min-height: 30%;
+}
+

@@ -1,5 +1,8 @@
 SimpleBlog::Application.routes.draw do
   
+  resources :blog_posts
+
+
   get "staff/index"
 
   get "staff/menu"
@@ -17,5 +20,7 @@ SimpleBlog::Application.routes.draw do
   get "main/archive"
 
   get "main/view_post"
+
+  root :to => 'main#index'
 
 end
