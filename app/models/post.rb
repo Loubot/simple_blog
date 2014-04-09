@@ -16,7 +16,7 @@
 class Post < ActiveRecord::Base
 
 	set_table_name 'blog_posts'
-  # attr_accessible :title, :body
+  attr_accessible :title, :body, :status, :content, :author_id
 
   belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
 
@@ -24,5 +24,5 @@ class Post < ActiveRecord::Base
 
   has_many :categorisations
 
-  has_many :categories :through => :categorisations
+  has_many :categories, :through => :categorisations
 end

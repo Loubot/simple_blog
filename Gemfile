@@ -7,7 +7,7 @@ gem 'rails', '3.2.15'
 
 gem 'sqlite3'
 
-gem 'annotate'
+gem 'annotate', '2.6.3'
 
 gem 'better_errors'
 
@@ -25,7 +25,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '3.1.0'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
