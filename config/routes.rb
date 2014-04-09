@@ -1,5 +1,13 @@
 SimpleBlog::Application.routes.draw do
   
+  get "staff/index"
+
+  get "staff/menu"
+
+  get "staff/login"
+
+  get "staff/logout"
+
   get "main/index"
 
   get "main/list"
