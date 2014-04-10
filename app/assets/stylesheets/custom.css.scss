@@ -28,3 +28,30 @@ html,body{
 	min-height: 30%;
 }
 
+.tableContainer{
+	float: left;
+	margin-right: 10%;
+}
+
+.categoryList{	
+	border: solid;
+	min-height: 20%;
+	float: left;
+
+}
+
+.actions{
+	clear: both;
+}
+
+.displayPosts{
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
+	width: 45%;
+	min-height: 20%;
+}
+
+.indexUserLink{
+	font-size: 1.5em;
+}

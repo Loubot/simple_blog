@@ -1,4 +1,12 @@
 <h1>Listing posts</h1>
+<% @posts.each do |post| %>
+  <section class="displayPosts">
+  
+    <%= link_to "#{post.author.username}", post.author.username, class: 'indexUserLink' %><br>
+    <p style="padding-left:1%;"><%= post.title %> </p> 
+    <p style="padding-left:2%;"><%= post.body %></p>
+  </section>
+<% end %>
 
 <table>
   <tr>

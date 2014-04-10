@@ -1,3 +1,4 @@
+<div class="tableContainer">
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -27,16 +28,21 @@
       <th><%= f.label :status %></th>
       <td><%= select_tag(:status, options_for_select(['Draft', 'Published'])) %></td>
     </tr>
-    <tr>
-      <th><%= f.label :category %></th>
-      <td>
-        <% for category in @categories %>
-          <%= check_box_tag('categories[]', category.id) %><%= category.name %>
-        <% end %>
-      </td>
+    
     </tr>
   </table>
-
+</div>    
+      
+  <div class="categoryList col-md-2">
+    <%= f.label :category %> 
+    <ul>
+      <% for category in @categories %>
+        <li><%= check_box_tag('categories[]', category.id, @post.categories.map { |c| c.id }.include?(category.id)) %>
+          <%= category.name %></li>
+      <% end %>
+    </ul>
+  </div> <!-- end of categoryList -->
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

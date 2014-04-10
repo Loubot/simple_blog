@@ -36,15 +36,22 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @categories = Category.all
+    @user_list = User.order('last_name ASC').all.collect { |user| [user.full_name, user.id] }
   end
 
   # POST /posts
   # POST /posts.json
-  def create
+  def create    
     @post = Post.new(params[:post])
-     
+    @post.author = User.find(params[:author_id])
+    all_categories = get_all_categories
+    category_objects = create_category_array(params[:categories])
+    removed_categories = all_categories - category_objects
     respond_to do |format|
       if @post.save
+        category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
+        removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
         format.html { redirect_to @post, notice: 'Blog post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -58,9 +65,14 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    @post.author = User.find(params[:author_id])
+    all_categories = get_all_categories
+    category_objects = create_category_array(params[:categories])
+    removed_categories = all_categories - category_objects
     respond_to do |format|
       if @post.update_attributes(params[:post])
+        category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
+        removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
         format.html { redirect_to @post, notice: 'Blog post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -81,4 +93,16 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private #-------------------------
+
+  def get_all_categories
+    Category.order('name ASC').all
+  end
+
+  def create_category_array(cats)
+    cats = [] if cats.blank?
+    return cats.collect { |cat| Category.find(cat.to_i) }.compact
+  end
+
 end
