@@ -10,6 +10,32 @@
       </ul>
     </div>
   <% end %>
+  <table>
+    <tr>
+      <th><%= f.label :title %></th>
+      <td><%= f.text_field :title, size: 50 %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :body %></th>
+      <td><%= f.text_area :body, cols: 70, rows: 20 %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :author %></th>
+      <td><%= select_tag(:author_id, options_for_select(@user_list)) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :status %></th>
+      <td><%= select_tag(:status, options_for_select(['Draft', 'Published'])) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :category %></th>
+      <td>
+        <% for category in @categories %>
+          <%= check_box_tag('categories[]', category.id) %><%= category.name %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 
   <div class="actions">
     <%= f.submit %>

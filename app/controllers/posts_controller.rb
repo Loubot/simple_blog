@@ -24,8 +24,9 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
+    @categories = Category.all
     @post = Post.new
-
+    @user_list = User.order('last_name ASC').all.collect { |user| [user.full_name, user.id] }
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+     
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Blog post was successfully created.' }

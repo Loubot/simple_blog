@@ -1,4 +1,5 @@
 module ApplicationHelper
+	include PostsHelper
 
 	def full_title(title)
 		base_title = 'Simple blog application'

@@ -11,7 +11,7 @@
 #
 
 class Category < ActiveRecord::Base
-
+	attr_accessible :name, :short_name, :description
 	has_many :categorisations
   has_many :posts, :through => :categorisations
 end
