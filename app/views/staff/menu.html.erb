@@ -1,2 +1,11 @@
-<h1>Staff#menu</h1>
-<p>Find me in app/views/staff/menu.html.erb</p>
+<% provide(:title, 'Staff main aread') %>
+
+
+<section class="staffLeft menu col-xs-2">
+	<h3>Staff nav Menu</h3><br>
+	<%= link_to 'Manage Posts', staff_menu_path %>
+	<%= link_to 'Manage Categories', staff_menu_path %>
+	<%= link_to 'Manage Comments' %>
+	<%= link_to 'Manage Users', staff_menu_path %>
+	<%= link_to 'Logout', staff_logout_path %>
+</section>

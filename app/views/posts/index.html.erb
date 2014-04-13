@@ -1,14 +1,24 @@
 <h1>Listing posts</h1>
-<% @posts.each do |post| %>
-  <section class="displayPosts">
-  
-    <%= link_to "#{post.author.username}", post.author.username, class: 'indexUserLink' %><br>
-    <p style="padding-left:1%;"><%= post.title %> </p> 
-    <p style="padding-left:2%;"><%= post.body %></p>
-  </section>
-<% end %>
 
-<table>
+<div class='postsArea'>
+  <% @posts.each do |post| %>
+    <section class="displayPosts">
+    
+      <%= link_to "#{post.author.username}", post.author.username, class: 'indexUserLink' %>
+      <%= link_to 'Delete', post, class: 'postDelete', method: :delete, data: { confirm: 'Are you sure? '} %> <br>
+      Title: <span class="postTitle"><%= post.title %>  </span><br>
+      
+      <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>
+      <div class="postContent"><%= post.body %></div>
+
+    </section>
+  <% end %>
+</div>
+
+<div class="postsNavLinks">
+  <%= button_to 'New Blog post', new_post_path, class: 'btn btn-warning', method: 'get' %>
+</div>
+<!-- <table>
   <tr>
     <th>Created</th>
     <th>Title</th>
@@ -37,5 +47,5 @@
 </table>
 
 <br />
+ -->
 
-<%= link_to 'New Blog post', new_post_path %>

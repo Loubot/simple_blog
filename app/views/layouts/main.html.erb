@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-default indexHeader main" role="navigation">
+
+	<div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    
+				<h1 class="mainIndexHTitle text-center">Simple Blog</h1>
+		
+	    
+	  </div>
+
+
+	</nav>
+	<div class="container">
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+		<% end %>
+
+	</div>
+<%= yield %>
+
+</body>
+</html>
+

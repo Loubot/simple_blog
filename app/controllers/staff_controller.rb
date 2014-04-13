@@ -1,4 +1,5 @@
 class StaffController < ApplicationController
+	layout 'staff'
   def index
   end
 

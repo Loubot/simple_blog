@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.json
+  layout 'main'
   def index
     @posts = Post.all
 

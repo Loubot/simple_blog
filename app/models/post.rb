@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
 	set_table_name 'blog_posts'
   attr_accessible :title, :body, :status, :content, :author_id, :comments_count
 
+  validates  :content, length: { maximum: 140 }
+
   belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
 
   has_many :comments, :order => 'created_at ASC', :dependent => :destroy
