@@ -1,0 +1,22 @@
+
+
+
+<div class= "categoriesPage">
+	<table class="categoriesPageTable">
+		<tr>
+			<th class="col-md-3">Name</th>
+			<th class="col-md-6">Description</th>
+			<th>Short name</th>
+			<th class="col-md-4"></th>
+		</tr>
+		<% @categories.each do |cat| %>
+			<tr>
+				<td class="col-md-2"><%= cat.name %></td>
+				<td class="col-md-4"><%= cat.description %></td>
+				<td><%= cat.short_name %></td>
+				<td class="catNavs"><%= link_to 'Edit', cat, method: :post %>
+				<%= link_to 'Delete', cat, method: :delete, data: { confirm: 'Are you sure' } %></td>
+			</tr>	<br>
+		<% end %>
+	</table> <!-- end of categoriesPageTable -->
+</div> <!-- end of categoriesPage -->

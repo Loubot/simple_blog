@@ -1,13 +1,12 @@
 SimpleBlog::Application.routes.draw do
   
-  get "category/new"
+  get 'category/index'
 
-  get "category/update"
+  post "category/new"
 
-  get "category/destroy"
+  post "/category/update:id", to: 'category#update', as:'category'
 
-  resources :posts
-
+  delete "category/destroy:id", to: 'category#destroy', as: 'category'
 
   get "staff/index"
 
@@ -26,6 +25,8 @@ SimpleBlog::Application.routes.draw do
   get "main/archive"
 
   get "main/view_post"
+
+  resources :posts
 
   root :to => 'posts#index'
 
