@@ -4,7 +4,7 @@
 <div class= "categoriesPage">
 	<table class="categoriesPageTable">
 		<tr>
-			<th class="col-md-3">Name</th>
+			<th class="col-md-2">Name</th>
 			<th class="col-md-6">Description</th>
 			<th>Short name</th>
 			<th class="col-md-4"></th>
@@ -14,9 +14,27 @@
 				<td class="col-md-2"><%= cat.name %></td>
 				<td class="col-md-4"><%= cat.description %></td>
 				<td><%= cat.short_name %></td>
-				<td class="catNavs"><%= link_to 'Edit', cat, method: :post %>
+				<td class="catNavs"><%= link_to 'Edit', category_index_path(id: cat.id), method: :post %>
 				<%= link_to 'Delete', cat, method: :delete, data: { confirm: 'Are you sure' } %></td>
 			</tr>	<br>
 		<% end %>
 	</table> <!-- end of categoriesPageTable -->
 </div> <!-- end of categoriesPage -->
+
+<div class="categoryForm">
+	<%= form_for @category, :url => (params[:id].blank? ? categories_path : category_edit_path(id: @cateogry.id)) do |f| %>
+		<table>
+			<tr>
+				<th class="col-md-2">Name</th>
+				<th class="col-md-4">Description</th>
+				<th class="col-md-2">Short Name</th>
+			</tr>
+			<tr>
+				<td class="col-md-2"><%= f.text_field :name %></td>
+				<td class="col-md-4"><%= f.text_field :description, size: 60 %></td>
+				<td class="col-md-2"><%= f.text_field :short_name %></td>
+				<td><%= f.submit('Submit', class: 'btn btn-info') %></td>
+			</tr>
+		</table>
+	<% end %>
+</div><!--  end of categoryForm -->

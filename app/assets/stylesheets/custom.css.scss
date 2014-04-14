@@ -105,9 +105,30 @@ html,body{
 }
 
 .categoriesPageTable{
+	width: 85%;
 	margin-left: 2%;
+	margin-bottom: 10%;
+	
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
 }
 
 .catNavs{
+	float:right;
 	padding-left: 30px;
+}
+
+.categoryForm{
+	width: 100%;
+}
+
+.categorySubmit{
+	width:70px;
+}
+
+.button_to{
+	width: 10%;	
+	margin-left: auto;
+	margin-right: auto;
 }

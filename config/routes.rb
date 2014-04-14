@@ -2,9 +2,13 @@ SimpleBlog::Application.routes.draw do
   
   get 'category/index'
 
-  post "category/new"
+  post 'category/index'
 
-  post "/category/update:id", to: 'category#update', as:'category'
+  post 'category', to: 'category#create'
+
+  match 'categories', to: 'category#create'
+
+  get "/category/edit", to: 'category#edit'
 
   delete "category/destroy:id", to: 'category#destroy', as: 'category'
 
