@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   layout 'main'
   def index
-    @posts = Post.all
+    @posts = Post.order('updated_at ASC').all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,7 +51,10 @@ class PostsController < ApplicationController
       if @post.save
         category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
         removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
-        format.html { redirect_to @post, notice: 'Blog post was successfully created.' }
+        format.html {
+          flash[:success] = 'BLog post successfully created'
+          redirect_to root_url
+        }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -72,7 +75,10 @@ class PostsController < ApplicationController
       if @post.update_attributes(params[:post])
         category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
         removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
-        format.html { redirect_to @post, notice: 'Blog post was successfully updated.' }
+        format.html { 
+          flash[:success] = 'Blog post successfully updated'
+          redirect_to root_url
+        }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -5,7 +5,8 @@
     <section class="displayPosts">
     
       <%= link_to "#{post.author.username}", post.author.username, class: 'indexUserLink' %>
-      <%= link_to 'Delete', post, class: 'postDelete', method: :delete, data: { confirm: 'Are you sure? '} %> <br>
+      <%= link_to 'Edit', edit_post_path(post), class: 'indexPostsEdit' %> <span class="indexPostsEdit">&nbsp</span>
+      <%= link_to 'Delete', post, class: 'indexPostsEdit', method: :delete, data: { confirm: 'Are you sure? '} %> <br>
       Title: <span class="postTitle"><%= post.title %>  </span><br>
       
       <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>

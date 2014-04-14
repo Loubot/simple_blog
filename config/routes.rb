@@ -1,5 +1,11 @@
 SimpleBlog::Application.routes.draw do
   
+  get "category/new"
+
+  get "category/update"
+
+  get "category/destroy"
+
   resources :posts
 
 
@@ -21,6 +27,6 @@ SimpleBlog::Application.routes.draw do
 
   get "main/view_post"
 
-  root :to => 'main#index'
+  root :to => 'posts#index'
 
 end

@@ -90,14 +90,22 @@ html,body{
 }
 
 .postsNavLinks{
+	margin-left: 60%;
+	position: fixed;
 	float: left;
 }
 
-.postDelete{
+.indexPostsEdit{
 	float: right;
 	color: purple !important; 
 }
 
 .submit_button{
 	margin-left: 35%;
+}
+
+button {
+  -webkit-box-shadow: 10px 10px 10px 10px #eee;
+	-moz-box-shadow: 10px 10px 10px 10px #eee;
+	box-shadow: 10px 10px 10px 10px #eee;
 }
