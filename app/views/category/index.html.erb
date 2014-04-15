@@ -22,7 +22,7 @@
 </div> <!-- end of categoriesPage -->
 
 <div class="categoryForm">
-	<%= form_for @category, :url => (params[:id].blank? ? categories_path : category_edit_path(id: @cateogry.id)) do |f| %>
+	<%= form_for @category, :url => (params[:id].blank? ? categories_path : category_edit_path(@category)) do |f| %>
 		<table>
 			<tr>
 				<th class="col-md-2">Name</th>
@@ -36,5 +36,6 @@
 				<td><%= f.submit('Submit', class: 'btn btn-info') %></td>
 			</tr>
 		</table>
+		<%= hidden_field_tag :id, @category.id %>
 	<% end %>
 </div><!--  end of categoryForm -->

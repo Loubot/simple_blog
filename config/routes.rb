@@ -4,6 +4,8 @@ SimpleBlog::Application.routes.draw do
 
   post 'category/index'
 
+  put '/category/edit'
+
   post 'category', to: 'category#create'
 
   match 'categories', to: 'category#create'

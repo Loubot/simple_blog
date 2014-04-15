@@ -19,9 +19,15 @@ class CategoryController < ApplicationController
   end
 
   def edit
-  	cat = Category.find(params[:id])
-  	flash[:success] = cat
-  	redirect_to :back
+  	@cat = Category.find(params[:id])
+  	flash[:success] = params
+  	if @cat.update_attributes(params[:category])
+  		flash[:success] = 'Category updated successfully'
+  		redirect_to category_index_path
+  	else
+  		flash[:warning] = 'An error has occured'
+  		redirect_to category_index_path(id: params[:id])
+  	end
   end
   
 
@@ -32,7 +38,6 @@ class CategoryController < ApplicationController
   end
 
   def index
-  	flash[:success] = params[:id]
   	@categories = Category.all
   	@category = Category.find(params[:id]) if params[:id]
   	@category = Category.new if @category.nil?
