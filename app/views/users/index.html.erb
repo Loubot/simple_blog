@@ -1,0 +1,35 @@
+<div class="userIndexLeft container-fluid">
+  <h1>Listing users</h1>
+
+  <table>
+    <tr>
+      <th class="col-md-3 userTH">Full name</th>
+      <th class="col-md-1 userTH">Username</th>
+      <th class="col-md-2 userTH">email</th>
+      
+    </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td class="col-md-3"><%= user.full_name %></td>
+      <td class="col-md-1"><%= user.username %></td>
+      <td class="col-md-2"><%= user.email %></td>
+      <td><%= link_to 'Edit', users_path(id: user.id) %></td> 
+      
+    </tr>
+
+  <% end %>
+  </table>
+
+  <br />
+</div>
+
+<div class="userIndexRight ">
+  <% if params[:id] %>
+    <%= render 'form' %>
+    
+
+  <% else %>
+    <%= render 'form' %>
+  <% end %>
+</div>

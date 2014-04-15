@@ -1,0 +1,41 @@
+.userIndexLeft{
+	margin-left:2px;
+	margin-right: 10px;
+	width: 45%;
+	height: 75%;
+	float: left;
+	border: 1px solid;
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
+	overflow: auto;
+}
+
+.userIndexRight{
+	padding-top: 25px;
+	float: left;
+	width: 45%;
+	height: 75%;
+	border: 1px solid;
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
+	overflow: auto;
+}
+
+.userTH{
+	background-color: #FFA822;
+}
+
+.actions{
+	margin-top: 20px;
+	margin-left: 30%;
+}
+.userSubmit{
+	
+	float: left;
+}
+
+.userCancel{
+	float: left;
+}

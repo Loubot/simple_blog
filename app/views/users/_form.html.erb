@@ -1,0 +1,44 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <th class="col-md-2"> <%= f.label :first_name %></th>
+      <td > <%= f.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <th class="col-md-2"> <%= f.label :last_name %></th>
+      <td > <%= f.text_field :last_name%></td>
+    </tr>
+    <tr>
+      <th class="col-md-2"> <%= f.label :email %></th>
+      <td > <%= f.email_field :email %></td>
+    </tr>
+    <tr>
+      <th class="col-md-2"> <%= f.label :username %></th>
+      <td > <%= f.text_field :username %></td>
+    </tr>
+  </table>
+
+  
+  <% if params[:id] %>
+    <div class="actions col-md-4">
+      <%= f.submit 'Submit', class: 'btn btn-info userSubmit' %>
+      <%= link_to 'Cancel', users_path, class: 'btn btn-warning userCancel' %>
+    </div>
+  <% else %>
+    <div class="actions">
+      <%= f.submit 'Submit', class: 'btn btn-info userSubmit' %>
+    </div>
+  <% end %>
+<% end %>
