@@ -1,7 +1,7 @@
 .userIndexLeft{
 	margin-left:2px;
 	margin-right: 10px;
-	width: 45%;
+	width: 50%;
 	height: 75%;
 	float: left;
 	border: 1px solid;
@@ -25,11 +25,12 @@
 
 .userTH{
 	background-color: #FFA822;
+	text-align: center;
 }
 
 .actions{
 	margin-top: 20px;
-	margin-left: 30%;
+	margin-left: 25%;
 }
 .userSubmit{
 	height: 34px;
@@ -37,5 +38,6 @@
 }
 
 .userCancel{
+	
 	float: left;
 }

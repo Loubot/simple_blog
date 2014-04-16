@@ -28,13 +28,19 @@
       <th class="col-md-2"> <%= f.label :username %></th>
       <td > <%= f.text_field :username %></td>
     </tr>
+    <tr>  
+      <th><%= f.label :user_level %></th>
+      <td><%= select(:user, :user_level, (0..9).to_a) %></td>
+    </tr> 
   </table>
+
 
   
   <% if params[:id] %>
-    <div class="actions col-md-4">
+    <div class="actions col-md-6">
       <%= f.submit 'Submit', class: 'btn btn-info userSubmit' %>
       <%= link_to 'Cancel', users_path, class: 'btn btn-warning userCancel' %>
+      <%= link_to 'Destroy User', @user, class: 'btn btn-danger userDestroy', data: { confirm: 'Are you sure?' }, method: :delete %>
     </div>
   <% else %>
     <div class="actions">

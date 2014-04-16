@@ -6,14 +6,15 @@
       <th class="col-md-3 userTH">Full name</th>
       <th class="col-md-1 userTH">Username</th>
       <th class="col-md-2 userTH">email</th>
-      
+      <th class="col-md-1 userTH">User level</th>
     </tr>
 
   <% @users.each do |user| %>
     <tr>
-      <td class="col-md-3"><%= user.full_name %></td>
+      <td class="col-md32"><%= user.full_name %></td>
       <td class="col-md-1"><%= user.username %></td>
       <td class="col-md-2"><%= user.email %></td>
+      <td class="col-md-1"><%= user.user_level %></td>
       <td><%= link_to 'Edit', users_path(id: user.id) %></td> 
       
     </tr>
@@ -33,3 +34,5 @@
     <%= render 'form' %>
   <% end %>
 </div>
+
+
