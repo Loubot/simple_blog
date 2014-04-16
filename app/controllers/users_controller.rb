@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  layout 'main'
+  layout 'staff'
   def index
     @users = User.all
     # @user = user.find(params[:id]) if params[:id]
