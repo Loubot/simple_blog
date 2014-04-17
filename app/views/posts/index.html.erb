@@ -13,10 +13,16 @@
       <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>
       <div class="postContent"><%= post.body %></div>
       <%= content_tag :span do %>
-        <%= link_to pluralize(post.comments.count, 'Comment'), post_path(post) %> 
-      <% end %>
+        <%= link_to pluralize(post.comments.count, 'Comment'), nil,class: 'commentCount', remote: :true %> 
+      <% end %>      
 
     </section>
+    <section class="commentsSection">
+      <% post.comments.each do |comment| %>
+        <%= content_tag :div,comment.content, class: 'displayComments' %>
+      <% end %>
+    </section>
+
     <%= form_for @comment do |g|%>
       <%= g.label :content, 'Comment' %>
       <%= g.text_field :content, size: 50 %>
