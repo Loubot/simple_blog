@@ -1,3 +1,4 @@
+<%= provide(:title => 'Posts') %>
 <h1>Listing posts</h1>
 
 <div class='postsArea'>
@@ -10,9 +11,17 @@
       Title: <span class="postTitle"><%= post.title %>  </span><br>
       
       <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>
-      <div class="postContent"><%= post.body %></div>
+      <div class="postContent"><%= post.body %></div><span><%= post.comments_count %></span>
 
     </section>
+    <%= form_for @comment do |g| %>
+      <%= g.label :content %>
+      <%= g.text_field :content %>
+      <%= g.label :author %>
+      <%= g.text_field :author %>
+      <%= g.hidden_field :post_id, :value => post.id %>
+      <%= g.submit %>
+    <% end %>
   <% end %>
 </div>
 

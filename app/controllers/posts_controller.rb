@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   layout 'main'
+
+  before_filter :authenticate_user!
   def index
     @posts = Post.order('updated_at ASC').all
-
+    @comment = Comment.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

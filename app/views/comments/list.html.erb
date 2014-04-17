@@ -1,0 +1,13 @@
+
+<table>
+	<tr class="col-md-2">Comment</tr>
+	<tr class="col-md-2">Status</tr>
+	<tr class="col-md-2"></tr>
+</table>
+<% for comment in @comments %> 
+	<tr class="<%= cycle('row1', 'row2')%>" >
+		<td>
+			<%= comment.content %>
+		</td>
+	</tr>
+<% end %>

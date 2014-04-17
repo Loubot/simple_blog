@@ -14,7 +14,7 @@
 
 class Comment < ActiveRecord::Base
   attr_accessible :title, :body, :author, :content, :status, :post_id
-  belongs_to :post, counter_cache: true
+  belongs_to :post
 
   #before_save :check_count
 
