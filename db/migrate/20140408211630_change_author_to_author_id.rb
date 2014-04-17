@@ -1,6 +1,6 @@
 class ChangeAuthorToAuthorId < ActiveRecord::Migration
   def up
-  	#rename_column :blog_posts, :author, :author_id
+  	rename_column :blog_posts, :author, :author_id
   end
 
   def down

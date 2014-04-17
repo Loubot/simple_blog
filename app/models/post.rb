@@ -4,11 +4,13 @@
 #
 #  id             :integer          not null, primary key
 #  title          :string(100)      default(""), not null
-#  content        :text(100)        default(""), not null
-#  author_id      :integer          default(0), not null
+#  body           :text             default(""), not null
+#  author_id      :string(100)      default("0"), not null
+#  category       :string(20)       default(""), not null
 #  status         :string(20)       default(""), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  content        :string(100)      default(""), not null
 #  comments_count :integer          default(0), not null
 #
 
