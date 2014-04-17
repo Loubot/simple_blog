@@ -30,4 +30,6 @@ gem 'jquery-rails', '3.1.0'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
+gem 'rake', '10.2.2'
+
 
