@@ -3,7 +3,8 @@ html,body{
 }
 
 .indexHeader.main{
-	height: 15%;
+	height: 10%;
+	
 	background-color: #80CCE6;
 }
 
@@ -12,7 +13,17 @@ html,body{
 	background-color: #ABAB9B;
 }
 
+.mainHeaderText{
+	width: 20%;
+	color: #FFFFFF !important;
+	font-size: 3em !important;
+	display:block;
+	margin-left: 35%;
+}
+
+
 .mainIndexHTitle{
+	padding-top: 10px;
 	font-size: 3em;
 	color: #FFFFFF;
 }
@@ -44,61 +55,6 @@ html,body{
 	clear: both;
 }
 
-.displayPosts{
-	-webkit-box-shadow: 2px 2px 2px 2px #eee;
-	-moz-box-shadow: 2px 2px 2px 2px #eee;
-	box-shadow: 2px 2px 2px 2px #eee;
-	width: 100%;
-	height: 150px;
-	margin-left: 10%;
-	margin-bottom: 1%;
-	-webkit-border-radius: 5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-	border:2px solid #a1a1a1;	 
-	background:#dddddd;
-}
-
-.indexUserLink{
-	margin-left:40%;
-	font-size: 1.5em;
-	color: #A60000;
-	text-align:center;
-}
-
-.postTitle{
-	font-size: 1em;
-	font-family:"Georgia", serif;
-}
-
-.postContent{
-	
-	margin-left: 5%;
-	width: 400px;
-	height: 62%; 	
-	border: 1px solid;
-	float: left;
-	-webkit-border-radius: 5px;
-	-moz-border-radius:5px;
-	border-radius:5px;	
-	font-family:"Helvetica", "Arial", sans-serif !important;
-}
-
-.postsArea{
-	float: left;
-	margin-right: 200px;
-}
-
-.postsNavLinks{
-	margin-left: 60%;
-	position: fixed;
-	float: left;
-}
-
-.indexPostsEdit{
-	float: right;
-	color: purple !important; 
-}
 
 .submit_button{
 	margin-left: 35%;

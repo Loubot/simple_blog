@@ -1,5 +1,7 @@
-SimpleBlog::Application.routes.draw do
-  
+SimpleBlog::Application.routes.draw do 
+
+  devise_for :users, path_names: { sign_up: 'register'}
+
   get 'category/index'
 
   post 'category/index'
@@ -35,6 +37,12 @@ SimpleBlog::Application.routes.draw do
   resources :posts
 
   resources :users
+
+  get "comments/list"
+
+  get "comments/show"
+
+  post 'comments', to: 'comments#index'
 
   root :to => 'posts#index'
 

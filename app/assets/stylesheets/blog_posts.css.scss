@@ -1,3 +1,74 @@
 // Place all the styles related to the BlogPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.commentsSection{
+	display: none;
+}
+.displayComments{
+	
+	clear: both;
+	border: .1em solid #7A96EA;
+	width: 400px;
+	margin-left: 10%; 
+	margin-bottom:1%;
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
+}
+
+.displayPosts{
+	-webkit-box-shadow: 2px 2px 2px 2px #eee;
+	-moz-box-shadow: 2px 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px 2px #eee;
+	width: 100%;
+	height: 150px;
+	margin-left: 10%;
+	margin-bottom: 1%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	border:2px solid #a1a1a1;	 
+	background:#dddddd;
+}
+
+.indexUserLink{
+	margin-left:40%;
+	font-size: 1.5em;
+	color: #A60000;
+	text-align:center;
+}
+
+.postTitle{
+	font-size: 1em;
+	font-family:"Georgia", serif;
+}
+
+.postContent{
+	
+	margin-left: 5%;
+	width: 400px;
+	height: 62%; 	
+	border: 1px solid;
+	float: left;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	border-radius:5px;	
+	font-family:"Helvetica", "Arial", sans-serif !important;
+}
+
+.postsArea{
+	float: left;
+	margin-right: 200px;
+}
+
+.postsNavLinks{
+	margin-left: 60%;
+	position: fixed;
+	float: left;
+}
+
+.indexPostsEdit{
+	float: right;
+	color: purple !important; 
+}
