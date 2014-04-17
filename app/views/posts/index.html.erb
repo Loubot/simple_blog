@@ -17,7 +17,9 @@
 </div>
 
 <div class="postsNavLinks">
-  <%= button_to 'New Blog post', new_post_path, class: 'btn btn-warning', method: 'get' %>
+  <% if user_signed_in? %>
+    <%= button_to 'New Blog post', new_post_path, class: 'btn btn-warning', method: 'get' %>
+  <% end %>
 </div>
 <!-- <table>
   <tr>

@@ -3,7 +3,8 @@ html,body{
 }
 
 .indexHeader.main{
-	height: 15%;
+	height: 10%;
+	
 	background-color: #80CCE6;
 }
 
@@ -12,7 +13,17 @@ html,body{
 	background-color: #ABAB9B;
 }
 
+.mainHeaderText{
+	width: 20%;
+	color: #FFFFFF !important;
+	font-size: 3em !important;
+	display:block;
+	margin-left: 35%;
+}
+
+
 .mainIndexHTitle{
+	padding-top: 10px;
 	font-size: 3em;
 	color: #FFFFFF;
 }

@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: 'loubot', hashed_password: 'pass', first_name: 'Louis', last_name: 'Angelini', email:'l@b.con', display_name:'loubot', user_level: 9)
-Post.create(author_id: 1, body: 'This post was seeded into the database.', content:'Random stuff', title: 'Test post')
+# User.create(username: 'loubot', hashed_password: 'pass', first_name: 'Louis', last_name: 'Angelini', email:'lllouis@yahoo.com', display_name:'loubot', user_level: 9)
+# Post.create(author_id: 1, body: 'This post was seeded into the database.', content:'Random stuff', title: 'Test post')
