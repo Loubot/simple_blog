@@ -5,10 +5,10 @@
 		    
 					<p class='navbar-text mainHeaderText'>Simple Blog</p>
 				  <% if user_signed_in? %>
-				  	<p class= 'navbar-right mainHeaderRight'><%= label_tag "User: ", nil,class: 'col-md-3' %>&nbsp<%= link_to "#{current_user.email}",  current_user, class: 'col-md-2' %></p>
+				  	<p class= 'navbar-right mainHeaderRight pull-right'><%= label_tag "User: ", nil %>&nbsp<%= link_to "#{current_user.email}",  current_user%></p>
 				  <% end %>
 				  <br>
-		    	<%= link_to 'Not you?', destroy_user_session_path, method: :delete, class: 'navbar-right col-md-2' %>
+		    	<%= link_to 'Not you?', destroy_user_session_path, method: :delete, class: 'navbar-right' %>
 		  </div>
 
 
