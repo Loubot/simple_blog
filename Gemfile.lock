@@ -142,9 +142,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails (= 3.1.0)
-  rack (= 1.4.5)
   rails (= 3.2.15)
-  rake (= 10.2.2)
   sass-rails (~> 3.2.3)
   sqlite3
   thin (~> 1.5)

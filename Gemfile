@@ -31,15 +31,9 @@ gem 'jquery-rails', '3.1.0'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
-<<<<<<< HEAD
-gem 'rake', '10.2.2'
-=======
+
 gem 'thin', '~> 1.5'
 
-gem 'rack', '1.4.5'
 
-
-
->>>>>>> addDevise
 
 
