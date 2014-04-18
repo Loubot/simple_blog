@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.commentsSection{
+#commentsSection{
 	display: none;
 }
 .displayComments{
@@ -59,16 +59,23 @@
 
 .postsArea{
 	float: left;
-	margin-right: 200px;
+	margin-right: 20%;
+	margin-left: 5%;
+	clear: both;
 }
 
 .postsNavLinks{
-	margin-left: 60%;
-	position: fixed;
-	float: left;
+	clear: both;
+	width: 10%;
+	margin: 0 auto;
+	
 }
 
 .indexPostsEdit{
 	float: right;
 	color: purple !important; 
+}
+
+.commentsLink{
+
 }
