@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140417102243) do
+ActiveRecord::Schema.define(:version => 20140418132443) do
 
   create_table "blog_posts", :force => true do |t|
     t.string   "title",          :limit => 100, :default => "",  :null => false
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20140417102243) do
 
   create_table "users", :force => true do |t|
     t.string   "username",               :limit => 25, :default => "", :null => false
-    t.string   "hashed_password",        :limit => 40, :default => "", :null => false
     t.string   "first_name",             :limit => 25, :default => "", :null => false
     t.string   "last_name",              :limit => 40, :default => "", :null => false
     t.string   "email",                  :limit => 50, :default => "", :null => false

@@ -4,9 +4,10 @@
 
 #commentsSection{
 	display: none;
+	margin-left: 3%;
 }
 .displayComments{
-	
+	word-wrap: break-word;
 	clear: both;
 	border: .1em solid #7A96EA;
 	width: 400px;
@@ -76,6 +77,3 @@
 	color: purple !important; 
 }
 
-.commentsLink{
-
-}
