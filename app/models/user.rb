@@ -46,3 +46,5 @@ class User < ActiveRecord::Base
     end
   end
 end
+
+#https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
