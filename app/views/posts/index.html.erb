@@ -12,7 +12,7 @@
       Title: <span class="postTitle"><%= post.title %>  </span><br>
       
       <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>
-      <div class="postContent"><%= post.body %></div>
+      <div class="postContent"><%= post.content %></div>
       <%= content_tag :span, class: 'commentsLink col-md-4' do %>
         <%= link_to_if((post.comments.count > 0), pluralize(post.comments.count, 'Comment'), nil,class: 'commentCount', id:"commentsSection#{post.id}", remote: :true) %> 
       <% end %>      
@@ -20,13 +20,14 @@
     </section>
     <%= content_tag :span, id:'commentsSection', class: "commentsSection#{post.id}" do %>
       <% post.comments.each do |comment| %>
-        <span class="col-md-1"><%= comment.author %> </span><%= content_tag :div,comment.content, class: 'displayComments' %>
+        <span class="col-md-1"><%= comment.author %> </span><%= content_tag :span,comment.content, class: 'displayComments' %>
+        <span><%= time_ago(comment.created_at) %> ago</span>
       <% end %>
     <% end %>
 
     <%= form_for @comment do |g|%>
       <%= g.label :content, 'Comment' %>
-      <%= g.text_field :content, size: 50 %>
+      <%= g.text_field :content %>
       
       <%= g.hidden_field :post_id, :value => post.id %>
       <%= g.submit %>

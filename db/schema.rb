@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140418132443) do
+ActiveRecord::Schema.define(:version => 20140417102243) do
 
   create_table "blog_posts", :force => true do |t|
-    t.string   "title",          :limit => 100, :default => "",  :null => false
-    t.text     "body",                          :default => "",  :null => false
-    t.string   "author_id",      :limit => 100, :default => "0", :null => false
-    t.string   "category",       :limit => 20,  :default => "",  :null => false
-    t.string   "status",         :limit => 20,  :default => "",  :null => false
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-    t.string   "content",        :limit => 100, :default => "",  :null => false
-    t.integer  "comments_count", :limit => 4,   :default => 0,   :null => false
+    t.string   "title",          :limit => 100, :default => "", :null => false
+    t.text     "content",        :limit => 100, :default => "", :null => false
+    t.integer  "author_id",      :limit => 100, :default => 0,  :null => false
+    t.string   "status",         :limit => 20,  :default => "", :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.integer  "comments_count", :limit => 4,   :default => 0,  :null => false
   end
+
+  add_index "blog_posts", ["author_id"], :name => "index_blog_posts_on_author_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :limit => 50, :default => "", :null => false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20140418132443) do
 
   create_table "users", :force => true do |t|
     t.string   "username",               :limit => 25, :default => "", :null => false
+    t.string   "hashed_password",        :limit => 40, :default => "", :null => false
     t.string   "first_name",             :limit => 25, :default => "", :null => false
     t.string   "last_name",              :limit => 40, :default => "", :null => false
     t.string   "email",                  :limit => 50, :default => "", :null => false

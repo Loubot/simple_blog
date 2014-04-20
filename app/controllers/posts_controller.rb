@@ -54,7 +54,7 @@ class PostsController < ApplicationController
         category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
         removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
         format.html {
-          flash[:success] = 'BLog post successfully created'
+          flash[:success] = params
           redirect_to root_url
         }
         format.json { render json: @post, status: :created, location: @post }

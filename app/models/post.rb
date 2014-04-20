@@ -4,20 +4,18 @@
 #
 #  id             :integer          not null, primary key
 #  title          :string(100)      default(""), not null
-#  body           :text             default(""), not null
-#  author_id      :string(100)      default("0"), not null
-#  category       :string(20)       default(""), not null
+#  content        :text(100)        default(""), not null
+#  author_id      :integer          default(0), not null
 #  status         :string(20)       default(""), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  content        :string(100)      default(""), not null
 #  comments_count :integer          default(0), not null
 #
 
 class Post < ActiveRecord::Base
 
 	set_table_name 'blog_posts'
-  attr_accessible :title, :body, :status, :content, :author_id, :comments_count
+  attr_accessible :title, :status, :content, :author_id, :comments_count
 
   validates  :content, length: { maximum: 140 }
 
