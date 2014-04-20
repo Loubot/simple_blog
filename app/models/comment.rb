@@ -32,4 +32,10 @@ class Comment < ActiveRecord::Base
     p.save  
     puts "new size #{p.comments.size}"	
   end
+
+  def save_author(current_user)
+    
+    self.update_attributes(author: current_user.first_name)
+    puts current_user.first_name
+  end
 end

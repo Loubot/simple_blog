@@ -9,8 +9,10 @@ class CommentsController < ApplicationController
 
   def list
   	@comment = Comment.new(params[:comment])
+
   	@comments = Comment.order('created_at DESC').all
   	if @comment.save
+      @comment.save_author(current_user)
   		flash[:success] = 'Comment saved successfully'
   		redirect_to posts_path
   	else

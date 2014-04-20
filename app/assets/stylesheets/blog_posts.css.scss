@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.commentsSection{
+#commentsSection{
 	display: none;
+	margin-left: 5%;
 }
 .displayComments{
-	
+	word-wrap: break-word;
 	clear: both;
 	border: .1em solid #7A96EA;
 	width: 400px;
@@ -21,7 +22,7 @@
 	-webkit-box-shadow: 2px 2px 2px 2px #eee;
 	-moz-box-shadow: 2px 2px 2px 2px #eee;
 	box-shadow: 2px 2px 2px 2px #eee;
-	width: 100%;
+	width: 80%;
 	height: 150px;
 	margin-left: 10%;
 	margin-bottom: 1%;
@@ -29,7 +30,7 @@
 	-moz-border-radius:5px;
 	border-radius:5px;
 	border:2px solid #a1a1a1;	 
-	background:#dddddd;
+	
 }
 
 .indexUserLink{
@@ -59,16 +60,20 @@
 
 .postsArea{
 	float: left;
-	margin-right: 200px;
+	
+	margin-left: 5%;
+	width: 50%;
+	clear: both;
+	background: #FFFFFF
 }
 
 .postsNavLinks{
-	margin-left: 60%;
-	position: fixed;
 	float: left;
+	
 }
 
 .indexPostsEdit{
 	float: right;
 	color: purple !important; 
 }
+

@@ -4,5 +4,7 @@
 
 $(document).ready ->
 	$(document).on 'click', '.commentCount', ->
-		$('.commentsSection').toggle 'slow', ->
+		showMe = $(@).attr 'id'
+		$(".#{showMe}").toggle 'slow', ->
+
 			

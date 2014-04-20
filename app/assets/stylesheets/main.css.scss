@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+body{
+	background-color: #dddddd !important;
+}
 .btn{
 	color: white !important;
 }
@@ -10,3 +13,22 @@
 .mainHeaderRight{
 	height:5px;
 }
+
+#left-column{
+	float: left;
+	width: 730px;
+	margin: 2em 1em;
+}
+
+#right-column{
+	float: right;
+	width: 180px;
+	margin: 2em 1em;
+}
+
+.post{ margin-bottom: 2em; }
+.post .title{ font-size: 1.2em; font-weight: bold; }
+.post .author{ font-size: .8em; }
+.post .date{ font-size: .8em; }
+.post .body{ margin: 1em 0; }
+.post .categories{ font-size: .8em; }

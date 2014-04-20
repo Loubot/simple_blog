@@ -1,7 +1,8 @@
 <%= provide(:title => 'Posts') %>
-<h1>Listing posts</h1>
+
 
 <div class='postsArea'>
+  <h1>Listing posts</h1>
   <% @posts.each do |post| %>
     <section class="displayPosts">
     
@@ -12,16 +13,16 @@
       
       <div style="float:left;padding-right:3px;"><%= post.author.first_name %> wrote: </div>
       <div class="postContent"><%= post.body %></div>
-      <%= content_tag :span do %>
-        <%= link_to pluralize(post.comments.count, 'Comment'), nil,class: 'commentCount', remote: :true %> 
+      <%= content_tag :span, class: 'commentsLink col-md-4' do %>
+        <%= link_to_if((post.comments.count > 0), pluralize(post.comments.count, 'Comment'), nil,class: 'commentCount', id:"commentsSection#{post.id}", remote: :true) %> 
       <% end %>      
 
     </section>
-    <section class="commentsSection">
+    <%= content_tag :span, id:'commentsSection', class: "commentsSection#{post.id}" do %>
       <% post.comments.each do |comment| %>
-        <%= content_tag :div,comment.content, class: 'displayComments' %>
+        <span class="col-md-1"><%= comment.author %> </span><%= content_tag :div,comment.content, class: 'displayComments' %>
       <% end %>
-    </section>
+    <% end %>
 
     <%= form_for @comment do |g|%>
       <%= g.label :content, 'Comment' %>
