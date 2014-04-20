@@ -34,6 +34,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'thin', '~> 1.5'
 
+gem 'kaminari'
+
 
 
 
