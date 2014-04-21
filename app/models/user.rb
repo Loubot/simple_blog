@@ -37,6 +37,8 @@ class User < ActiveRecord::Base
   attr_accessor :login
   attr_accessible :login
 
+  validates_presence_of :username, :email, :password, :password_confirmation, :first_name, :last_name, :display_name
+
   validates :username,:uniqueness => { :case_sensitive => false }
 
   has_many :recent_posts, :class_name => 'Post', :foreign_key => 'author_id',:order => 'created_at ASC', :limit => 5

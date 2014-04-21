@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.userLogin{
+	float: right;
+}
+
+.userPassword{
+	float: right;
+}
+
+.userLoginLabel{
+	float: left;
+}
+
+.userPasswordLabel{
+	float: left;
+}
 #commentsSection{
 	width: 80%;
 	display: none;

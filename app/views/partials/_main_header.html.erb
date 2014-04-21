@@ -5,10 +5,19 @@
 		    
 					<p class='navbar-text mainHeaderText'>Simple Blog</p>
 				  <% if user_signed_in? %>
-				  	<p class= 'navbar-right mainHeaderRight pull-right'><%= label_tag "User: ", nil %>&nbsp<%= link_to "#{current_user.email}",  current_user%></p>
+				  	<p class= 'navbar-right mainHeaderRight pull-right'><%= label_tag "User: ", nil %>&nbsp<%= link_to "#{current_user.email}",  current_user %></p>
+				  	<br>
+		    		<%= link_to 'Not you?', destroy_user_session_path, method: :delete, class: 'navbar-right' %>
+				  <% else %>
+				  	<%= form_for :user, url: user_session_path, html: { class: 'input-group input-group-sm pull-right', id: 'postLogin' } do |f| %>
+				  		<%= f.label :login, class: 'userLoginLabel' %>
+				  		<%= f.text_field :login, class:'userLogin' %><br>
+				  		<%= f.label :password, class: 'userPasswordLabel' %>
+				  		<%= f.password_field :password, autocomplete: 'off', class: 'userPassword' %>
+				  		<%= f.submit 'Submit' %>
+				  	<% end %>
 				  <% end %>
-				  <br>
-		    	<%= link_to 'Not you?', destroy_user_session_path, method: :delete, class: 'navbar-right' %>
+				  
 		  </div>
 
 

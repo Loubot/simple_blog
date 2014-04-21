@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   layout 'main'
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   def index
     posts = Post.order('updated_at ASC').all
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(3)
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
         category_objects.each { |cat| @post.categories << cat if !@post.categories.include?(cat) }
         removed_categories.each { |cat| @post.categories.delete(cat) if @post.categories.include?(cat) }
         format.html {
-          flash[:success] = params
+          flash[:success] = 'Post created successfully'
           redirect_to root_url
         }
         format.json { render json: @post, status: :created, location: @post }

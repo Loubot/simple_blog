@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(:version => 20140417102243) do
 
   create_table "blog_posts", :force => true do |t|
-    t.string   "title",          :limit => 100, :default => "", :null => false
-    t.text     "content",        :limit => 100, :default => "", :null => false
-    t.integer  "author_id",      :limit => 100, :default => 0,  :null => false
-    t.string   "status",         :limit => 20,  :default => "", :null => false
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
-    t.integer  "comments_count", :limit => 4,   :default => 0,  :null => false
+    t.string   "title",          :limit => 100, :default => "",  :null => false
+    t.text     "body",                          :default => "",  :null => false
+    t.string   "author_id",      :limit => 100, :default => "0", :null => false
+    t.string   "category",       :limit => 20,  :default => "",  :null => false
+    t.string   "status",         :limit => 20,  :default => "",  :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "content",        :limit => 100, :default => "",  :null => false
+    t.integer  "comments_count", :limit => 4,   :default => 0,   :null => false
   end
-
-  add_index "blog_posts", ["author_id"], :name => "index_blog_posts_on_author_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :limit => 50, :default => "", :null => false
