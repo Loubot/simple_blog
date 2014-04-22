@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   #before_filter :authenticate_user!
   def index
-    posts = Post.order('updated_at ASC').all
+    posts = Post.order('updated_at DESC').all
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(3)
     @comment = Comment.new    
     respond_to do |format|

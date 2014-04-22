@@ -9,16 +9,26 @@
 				  	<br>
 		    		<%= link_to 'Not you?', destroy_user_session_path, method: :delete, class: 'navbar-right' %>
 				  <% else %>
-				  	<%= form_for :user, url: user_session_path, html: { class: 'input-group input-group-sm pull-right', id: 'postLogin' } do |f| %>
-				  		<%= f.label :login, class: 'userLoginLabel' %>
-				  		<%= f.text_field :login, class:'userLogin' %><br>
-				  		<%= f.label :password, class: 'userPasswordLabel' %>
-				  		<%= f.password_field :password, autocomplete: 'off', class: 'userPassword' %>
-				  		<%= f.submit 'Submit' %>
-				  	<% end %>
+				  	<ul id ="loginContainer" class="nav navbar-nav pull-right">
+        
+					    <li class="dropdown">
+					      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+					      <div class="dropdown-menu login">
+					        <%= form_for :user, url: user_session_path, html: { class: 'input-group input-group-sm pull-right', id: 'postLogin' } do |f| %>
+							  		<%= f.label :login %>
+							  		<%= f.text_field :login %><br>
+							  		<%= f.label :password %>
+							  		<%= f.password_field :password, autocomplete: 'off' %>
+							  		<%= f.submit 'Submit' %>
+							  	<% end %>
+					      </div> <!-- end of dropdown-menu -->
+					    </li> <!-- end of dropdown -->
+					  </ul> <!-- end of -->
 				  <% end %>
 				  
 		  </div>
 
 
 	</nav>
+
+	
